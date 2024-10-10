@@ -1,0 +1,12 @@
+version: 1
+services:
+  - type: web                  # This specifies it's a web service.
+    name: Empire_Md_Session         # Change this to a name you prefer.
+    env: node                  # This indicates you're using Node.js.
+    buildCommand: npm install   # Command to install dependencies.
+    startCommand: npm start     # Command to start your app.
+    plan: free                  # Choose a plan; 'free' is good for testing.
+    autoDeploy: true            # Automatically deploy on code changes.
+    routes:
+      - src: /.*
+        dest: /                # This means all traffic goes to your app.
